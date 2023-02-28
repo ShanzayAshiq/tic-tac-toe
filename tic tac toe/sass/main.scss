@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: cursive;
+  font-size: 40px;
+  color: white;
+  background-color: black;
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin glow {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+    0 0 80px #00b3ff, 0 0 120px #00b3ff;
+}
+
+.nav,
+.active_player {
+  @include flex();
+  gap: 50px;
+  margin: 20px 0 40px 0;
+}
+
+#reset,.cell{
+  cursor: pointer;
+}
+
+#cellcontainer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  place-content: center;
+  .cell{
+    @include flex();
+    font-size: 100px;
+    border: 2px solid wheat;
+  }
+  :hover{
+    background-color:#003246;
+    text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+    0 0 80px #00b3ff, 0 0 120px #00b3ff;
+  }
+}
+
+.cell {
+  width: 175px;
+  height: 175px;
+  border: 2px solid;
+}
+
+#message {
+  @include flex();
+  margin-top: 60px;
+}
+
+#game_title, #reset, #message{
+    @include glow();
+  h1{
+    font-size: 2rem;
+  }
+}
